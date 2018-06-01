@@ -16,7 +16,7 @@ library(stringr)
 
 ```
 
-1. Write a function that summaries fish catches for different locations that takes as input
+1. Write a function that summarizes fish catches for different locations that takes as input
 
 *a table that has prices for different fish
 
@@ -44,23 +44,21 @@ locations <- sample(c("Reef", "Pier", "Beach", "River", "Lake", "Ocean"))
 
 # Create a vector for catch numbers
 catch <- sample(0:100, 6, replace=TRUE)
-catch
 
 # Repeat this vector for each fish type and store the info in a table
 fish_catch <- matrix(nrow = length(fish), ncol = length(locations))
 for (i in 1:length(fish)) {
   fish_catch[i,] = sample(0:100, 6, replace=TRUE)
+  #fish_catch[i,] = catch # Why doesn't this work?
 }
 #fish_catch
 
 catches <- as.data.frame(fish_catch)
 rownames(catches) <- fish
 colnames(catches) <- locations
-#catches
+catches
 
 ```
-
-
 
 Function output will be
 
@@ -71,6 +69,16 @@ Function output will be
 * total fisheries revenue sum
 
 * if user requests it graph of revenue by location and total revenue (as text)
+
+```{r function}
+
+source('~/ESM_Computing/ESM262_HW3/fishery.R')
+
+fishery_summary(fish_prices, catches)
+
+catches
+
+```
 
 
 
