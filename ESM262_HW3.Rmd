@@ -1,0 +1,52 @@
+---
+title: "ESM 262 HW 3"
+author: "Lauren Kaapcke"
+date: "May 31, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+1. Write a function that summaries fish catches for different locations that takes as input
+
+*a table that has prices for different fish
+
+* a table that has the number caught for each fish species for each location
+
+* each location is in a different column
+
+* each fish is in a different row 
+
+Function output will be
+
+* most frequently caught fish in each location
+
+* total revenue for each location
+
+* total fisheries revenue sum
+
+* if user requests it graph of revenue by location and total revenue (as text)
+
+
+
+2. Write a second function estimates fish growth rate as a function of temperature, using the following equation from Bjoornsson et al., 2007
+
+"The relationship between specific growth rate (G) and temperature in °C (T) estimated by a third order polynomial (G=a+bT+cT**2+d*T**3 ), where a,b,c,d and are parameters
+
+3.  In an R markdown document
+
+Generate some example data for your fish market function; and show how this is created and used 
+
+Show an example of using your growth rate function with parameters from Experiment A of Table 2 in Bjoornsson et al., 2007
+
+4. Create a package that contains your two functions and a sample data set for the the fish market function
+
+5. Make sure all functions and the data set are documented
+
+6. Provide at least one test for each function
+
+7.  Export your function, 
+
+8.  Include package and Rmarkdown in a git repository and submit the link 
