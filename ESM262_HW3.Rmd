@@ -9,6 +9,13 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r tools, include = F}
+
+library(tidyverse)
+library(stringr)
+
+```
+
 1. Write a function that summaries fish catches for different locations that takes as input
 
 *a table that has prices for different fish
@@ -18,6 +25,42 @@ knitr::opts_chunk$set(echo = TRUE)
 * each location is in a different column
 
 * each fish is in a different row 
+
+```{r tables, include = F}
+
+# Create first table for fish prices
+# Create vectors for the types of fish and prices
+fish <- sample(c("Salmon", "Steelhead", "Shark", "Tuna", "Cod"))
+
+prices <- sample(1:15, 5, replace=TRUE)
+
+# Bind the vectors into a table
+fish_prices <- cbind(fish, prices)
+#fish_prices
+
+# Create second table for number of fish caught in each location
+# Create a vector of locations
+locations <- sample(c("Reef", "Pier", "Beach", "River", "Lake", "Ocean"))
+
+# Create a vector for catch numbers
+catch <- sample(0:100, 6, replace=TRUE)
+catch
+
+# Repeat this vector for each fish type and store the info in a table
+fish_catch <- matrix(nrow = length(fish), ncol = length(locations))
+for (i in 1:length(fish)) {
+  fish_catch[i,] = sample(0:100, 6, replace=TRUE)
+}
+#fish_catch
+
+catches <- as.data.frame(fish_catch)
+rownames(catches) <- fish
+colnames(catches) <- locations
+#catches
+
+```
+
+
 
 Function output will be
 
